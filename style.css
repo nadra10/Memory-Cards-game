@@ -33,6 +33,9 @@ width: 50%;
     flex-wrap: wrap;
     margin: 20px auto;
 }
+.memory-game-blocks.no-clicking {
+    pointer-events: none;
+}
 .memory-game-blocks .game-block {
     height: 200px;
     transition: transform .5s;
@@ -72,7 +75,8 @@ width: 50%;
     backface-visibility: hidden;
     border: 5px #3EA3B1;
 }
-.memory-game-blocks .game-block.is-flipped {
+.memory-game-blocks .game-block.is-flipped,
+.memory-game-blocksm.game-block.has-match {
 -webkit-transform: rotateY(180deg);
 -moz-transform: rotateY(180deg);
 transform: rotateY(180deg);

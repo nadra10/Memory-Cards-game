@@ -12,10 +12,10 @@ shuffle(orderRange);
 // getting order prop.
 blocks.forEach((block, index) => {
     block.style.order = orderRange[index];
-console.log(block);
-    block.addEventListener('click', function(evt) {
-        block.classList.add('is-flipped');
-        console.log(block);
+// console.log(block);
+    block.addEventListener('click', function() {
+        flipBlock(block);
+        // console.log(block);
     });  
 });
 
@@ -25,7 +25,53 @@ console.log(block);
 
 function flipBlock(selectedBlock) {
     
-    selectedBlock.classlist.add('is-flipped');
+    selectedBlock.classList.add('is-flipped');
+  // Collect All Flipped Cards
+  let allFlippedBlocks = blocks.filter(flippedBlock => flippedBlock.classList.contains('is-flipped'));
+
+  // If Theres Two Selected Blocks
+  if (allFlippedBlocks.length === 2) {
+
+    console.log('Two Flipped Blocks Selected');
+
+    stopClicking();
+    // check Matching Function
+checkMatchedBlocks(allFlippedBlocks[0], allFlippedBlocks[1]);
+}
+
+}
+
+
+
+function stopClicking(){
+    blocksContainer.classList.add('no-clicking');
+
+    setTimeout(() => {
+        blocksContainer.classList.remove('no-clicking');
+    }, duration);
+}
+
+// check Matched
+function checkMatchedBlocks(firstBlock, secondBlock) {
+    let triesElement = document.querySelector('.tries span');
+
+    if (firstBlock.dataset.technology === secondBlock.dataset.technology) {
+        firstBlock.classList.remove('is-flipped');
+        secondBlock.classList.remove('is-flipped');
+
+        firstBlock.classList.add('has-match');
+        secondBlock.classList.add('has-match');
+    
+    } else {
+        triesElement.innerHTML = parseInt(triesElement.innerHTML) + 1;
+        
+        setTimeout(() => {
+            firstBlock.classList.remove('is-flipped');
+            secondBlock.classList.remove('is-flipped');
+
+        }, duration);
+
+    }
 }
 //shuffle function
 
@@ -38,7 +84,7 @@ function shuffle(array) {
     while (current>0) {
         random = Math.floor(Math.random() * current);
         current --;
-        console.log(random);
+        // console.log(random);
         // making the swaping
         temp = array[current];
         array[current] = array[random];
