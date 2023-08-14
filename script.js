@@ -1,3 +1,25 @@
+document.querySelector('.control-buttons span').onclick =function() {
+    let yourName = prompt(" What's your name? Don't worry, we won't tell the aliens?");
+    // console.log(yourName);
+if (yourName == null || yourName == "") {
+    document.querySelector('.name span').innerHTML = "unknown";
+} else {
+    document.querySelector('.name span').innerHTML = yourName;
+}
+
+document.querySelector('.control-buttons').remove();
+}
+
+// volume Slider
+
+
+
+
+// timer
+
+
+
+
 let duration = 1000;
 let blocksContainer = document.querySelector(".memory-game-blocks");
 // creat array
