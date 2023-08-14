@@ -1,5 +1,5 @@
 # memory-cards-game
-This is a simple and fun game so you can test your memory skills by matching pairs of cards. 
+This is a simple and fun game so you can test your memory skills by matching cards. 
 The objective of the game is to find all the matching pairs in the least number of moves possible.
 
 # How to Play
