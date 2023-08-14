@@ -8,15 +8,39 @@ if (yourName == null || yourName == "") {
 }
 
 document.querySelector('.control-buttons').remove();
+// setInterval(updateCountdown, 1000);
 }
 
 // volume Slider
 
+let audio = document.querySelectorAll("audio");
+
+
+let volume = document.querySelector(".volume-control");
+volume.addEventListener("change", function(e) { 
+    for (let i=0; i< audio.length; i++) {
+        audio[i].volume = e.currentTarget.value / 100;
+    }
+
+})
+
+
+// timer function
+
+// let startTime = 2;
+// let time = startTime *60;
+// let countdownEl = document.querySelector('.timer');
 
 
 
-// timer
+// function updateCountdown() {
+//     let minutes = Math.floor(time / 60);
+//     let seconds = time %60;
 
+// countdownEl.innerHTML = `${minutes}: ${seconds}`;
+// time--;
+
+// }
 
 
 

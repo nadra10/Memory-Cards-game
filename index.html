@@ -6,25 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Memory Cards Game</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <!-- // volume Slider -->
-    <input type="range" id="volume-control">
-
-
+    <div class="volumeSlider">
+        <i class="fa-solid fa-volume-high"></i>
+        <input class="volume-control" type="range">
+    </div>
+    
 
 
     <div class="control-buttons">
         <span>Start Game</span>
     </div>
+
+
     <div class="info-container">
         <div class="name">
             Hello: <span></span>
         </div>
-                <!-- Timer Countdown -->
+                <!-- Timer Countdown
                 <div class ="timer">
                     02:00 
-                 </div>
+                 </div> -->
         <div class="tries">
             Wrong Tries: <span>0</span>
         </div>
